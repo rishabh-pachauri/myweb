@@ -1,199 +1,341 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rishabh Pachauri - Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            scroll-behavior: smooth;
-        }
-        header {
-            background-color: #282c34;
-            color: #61dafb;
-            padding: 2rem 0;
-            text-align: center;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background: #20232a;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            transition: background 0.5s;
-        }
-        nav a {
-            color: #61dafb;
-            text-decoration: none;
-            margin: 0 1rem;
-            padding: 0.5rem 1rem;
-            transition: background 0.3s, color 0.3s;
-        }
-        nav a:hover {
-            background: #61dafb;
-            color: #20232a;
-            border-radius: 5px;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            padding: 2rem 0;
-            padding-top: 6rem;
-        }
-        section {
-            margin: 2rem 0;
-            padding: 2rem;
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
-            border-bottom: 2px solid #61dafb;
-            padding-bottom: 0.5rem;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li {
-            padding: 0.5rem 0;
-        }
-        .skills ul, .projects ul {
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .skills li, .projects li {
-            flex: 1 1 calc(33% - 1rem);
-            margin: 0.5rem;
-            padding: 1rem;
-            background: #f4f4f4;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        .contact form input, .contact form textarea {
-            width: 100%;
-            padding: 0.75rem;
-            margin: 0.5rem 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .contact form input[type="submit"] {
-            background-color: #61dafb;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            padding: 0.75rem 1rem;
-            transition: background 0.3s;
-        }
-        .contact form input[type="submit"]:hover {
-            background-color: #21a1f1;
-        }
-        footer {
-            background: #20232a;
-            color: #61dafb;
-            text-align: center;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 1s, transform 1s;
-        }
-        .fade-in.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1>Rishabh Pachauri</h1>
-        <p>MTech in Computer Science and Engineering</p>
-    </header>
-    <nav>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+  </head>
+  <body>
+    <nav id="desktop-nav">
+      <div class="logo">Rishabh Pachauri</div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#Skills">Skills</a></li>
+          <li><a href="#Certifications">Certifications</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
     </nav>
-    <div class="container">
-        <section id="about" class="fade-in">
-            <h2>About Me</h2>
-            <p>Hello! I'm Rishabh Pachauri, an MTech graduate in Computer Science and Engineering. I have a passion for developing innovative programs that expedite the efficiency and effectiveness of organizational success. Well-versed in technology and writing code to create reliable and user-friendly systems, I am confident in my ability to contribute to a variety of projects.</p>
-        </section>
-
-        <section id="skills" class="fade-in">
-            <h2>Skills</h2>
-            <ul>
-                <li>Programming Languages: Python, Java, C++</li>
-                <li>Web Technologies: HTML, CSS, JavaScript</li>
-                <li>Frameworks: Django, React</li>
-                <li>Databases: MySQL, PostgreSQL</li>
-                <li>Tools: Git, Docker</li>
-            </ul>
-        </section>
-
-        <section id="projects" class="fade-in">
-            <h2>Projects</h2>
-            <ul>
-                <li><strong>Project 1:</strong> [Project Title]
-                    <p>[Brief description of the project.]</p>
-                </li>
-                <li><strong>Project 2:</strong> [Project Title]
-                    <p>[Brief description of the project.]</p>
-                </li>
-                <li><strong>Project 3:</strong> [Project Title]
-                    <p>[Brief description of the project.]</p>
-                </li>
-            </ul>
-        </section>
-
-        <section id="contact" class="fade-in">
-            <h2>Contact Me</h2>
-            <form action="mailto:rishabh@example.com" method="post" enctype="text/plain">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-                <input type="submit" value="Send Message">
-            </form>
-        </section>
-    </div>
+    <nav id="hamburger-nav">
+      <div class="logo">Rishabh Pachauri</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#Skills" onclick="toggleMenu()">Skills</a></li>
+          <li><a href="#Certifications" onclick="toggleMenu()">Certifications</a></li>
+          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </div>
+      </div>
+    </nav>
+    <section id="profile">
+      <div class="section__pic-container">
+        <img src="./assets/profile-pic.png" alt="Rishabh Pachauri profile picture" class="profile-pic" />
+      </div>
+      <div class="section__text">
+        <p class="section__text__p1">Hello, I'm</p>
+        <h1 class="title">Rishabh Pachauri</h1>
+        <p class="section__text__p2">Masters Student</p>
+        <div class="btn-container">
+          <button class="btn btn-color-2" onclick="window.open('./assets/resume-example.pdf')">Download CV</button>
+          <button class="btn btn-color-1" onclick="location.href='#contact'">Contact Info</button>
+        </div>
+        <div id="socials-container">
+          <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon" onclick="location.href='https://www.linkedin.com/in/rishabh-pachauri-ribimu'" />
+          <img src="./assets/github.png" alt="My Github profile" class="icon" onclick="location.href='https://github.com/rishabh-pachauri/'" />
+        </div>
+      </div>
+    </section>
+    <section id="about">
+      <p class="section__text__p1">Get To Know More</p>
+      <h1 class="title">About Me</h1>
+      <div class="section-container">
+        <div class="section__pic-container">
+          <img src="./assets/about-pic.png" alt="Profile picture" class="about-pic" />
+        </div>
+        <div class="about-details-container">
+          <div class="about-containers">
+            <div class="details-container">
+              <img src="./assets/experience.png" alt="Experience icon" class="icon" />
+              <h3>Experience</h3>
+              <p>1 year<br />Machine Learning Models Development</p>
+            </div>
+            <div class="details-container">
+              <img src="./assets/education.png" alt="Education icon" class="icon" />
+              <h3>Education</h3>
+              <p>B.Tech (Noida Institute Of Engineering And Technology)<br />M.Tech (Central University Of Rajasthan)</p>
+            </div>
+          </div>
+          <div class="text-container">
+            <p>
+              I am actively seeking an organization where I can utilize my problem-solving curiosity and the skills developed during my academic career to provide effective solutions in data science, deep learning, and related fields. I am always excited to learn new skills that can drive innovative solutions for the industry. With strong communication skills and a solid background in machine learning and natural language processing, I am proficient in SQL and programming languages such as Python and C. My goal is to contribute to a dynamic team and continuously expand my expertise to address complex challenges.
+            </p>
+          </div>
+        </div>
+      </div>
+      <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='#Skills'" />
+    </section>
+    <section id="Skills">
+      <p class="section__text__p1">Explore My</p>
+      <h1 class="title">Skills</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container">
+            <h2 class="experience-sub-title">Skills</h2>
+            <div class="article-container">
+              <article>
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                <div>
+                  <h3>Python</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+              <article>
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                <div>
+                  <h3>Machine Learning</h3>
+                  <p>Experienced</p>
+                </div>
+              </article>
+              <article>
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                <div>
+                  <h3>Deep Learning</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+              <article>
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                <div>
+                  <h3>C</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+              <article>
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                <div>
+                  <h3>Natural Language Processing</h3>
+                  <p>Basic</p>
+                </div>
+              </article>
+              <article>
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                <div>
+                  <h3>MySQL</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="details-container">
+            <h2 class="experience-sub-title">Skills</h2>
+            <div class="article-container">
+              <article>
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                <div>
+                  <h3>TensorFlow</h3>
+                  <p>Basic</p>
+                </div>
+              </article>
+              <article>
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                <div>
+                  <h3>Keras</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+              <article>
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                <div>
+                  <h3>HTML/CSS</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+              <article>
+                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
+                <div>
+                  <h3>GitHub</h3>
+                  <p>Intermediate</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='#Certifications'" />
+      </section>
+    <section id="Certifications">
+      <p class="section__text__p1">Browse My Recent</p>
+      <h1 class="title">Certifications</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img src="./assets/ibmdatas-1.png" alt="Project 1" class="Certifications-img" />
+            </div>
+            <h2 class="experience-sub-title project-title">IBM Data Science Certification</h2>
+            <div class="btn-container">
+              <button class="btn btn-color-2 project-btn" onclick="location.href='https://www.coursera.org/account/accomplishments/professional-cert/QXG7A4RVDAG5?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=prof'">Certificate</button>
+    
+            </div>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img src="./assets/dawp.png" alt="Project 1" class="Certifications-img" />
+            </div>
+            <h2 class="experience-sub-title project-title">Data Analysis With Python Certification</h2>
+            <div class="btn-container">
+              <button class="btn btn-color-2 project-btn" onclick="location.href='https://coursera.org/share/47868d15640c709e96f0e6b45256abd5'">Certificate</button>
+            </div>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img src="./assets/adsc.png" alt="Project 1" class="Certifications-img" />
+            </div>
+            <h2 class="experience-sub-title project-title">Applied Data Science Capstone Certification</h2>
+            <div class="btn-container">
+              <button class="btn btn-color-2 project-btn" onclick="location.href='https://coursera.org/share/5a3b7d436905616219b4a5454499b971'">Certificate</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      </section>
+      <section id="Certifications">
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img src="./assets/dvwp.png" alt="Project 1" class="Certifications-img" />
+            </div>
+            <h2 class="experience-sub-title project-title">Data Visualization with Python Certification</h2>
+            <div class="btn-container">
+              <button class="btn btn-color-2 project-btn" onclick="location.href='https://coursera.org/share/c6faba06795cdbd9ab25321f05c53834'">Certificate</button>
+    
+            </div>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img src="./assets/itga.png" alt="Project 1" class="Certifications-img" />
+            </div>
+            <h2 class="experience-sub-title project-title">Introduction to Generative AI Certification</h2>
+            <div class="btn-container">
+              <button class="btn btn-color-2 project-btn" onclick="location.href='https://coursera.org/share/f6891f34c273d096213d6c9540f59bf6'">Certificate</button>
+            </div>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img src="./assets/sql.png" alt="Project 1" class="Certifications-img" />
+            </div>
+            <h2 class="experience-sub-title project-title">Databases and SQL for Data Science with Python</h2>
+            <div class="btn-container">
+              <button class="btn btn-color-2 project-btn" onclick="location.href='https://coursera.org/share/d26ab8e30d3450c6f4349af722a09abc'">Certificate</button>
+             </div>
+          </div>
+        </div>
+      </div>
+      </section>
+      <section id="Certifications">
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img src="./assets/ppds.png" alt="Project 1" class="Certifications-img" />
+            </div>
+            <h2 class="experience-sub-title project-title">Python Project for Data Science Certification</h2>
+            <div class="btn-container">
+              <button class="btn btn-color-2 project-btn" onclick="location.href='https://coursera.org/share/6a8fef08016a99963e0b0ebd865b115f'">Certificate</button>
+    
+            </div>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img src="./assets/mlwp.png" alt="Project 1" class="Certifications-img" />
+            </div>
+            <h2 class="experience-sub-title project-title">Machine Learning with Python Certification</h2>
+            <div class="btn-container">
+              <button class="btn btn-color-2 project-btn" onclick="location.href='https://coursera.org/share/6499ba5ac4a2877eb693d7a51fc88b60'">Certificate</button>
+            </div>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img src="./assets/pfda.png" alt="Project 1" class="Certifications-img" />
+            </div>
+            <h2 class="experience-sub-title project-title">Python for Data Science, AI & Development</h2>
+            <div class="btn-container">
+              <button class="btn btn-color-2 project-btn" onclick="location.href='https://coursera.org/share/c9c734d664d5a262a3ea7f7a4498af7a'">Certificate</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='#project'" />
+  </section>
+    <section id="projects">
+      <p class="section__text__p1">Browse My Recent</p>
+      <h1 class="title">Projects</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img src="./assets/hate.png" alt="Project 1" class="project-img" />
+            </div>
+            <h2 class="experience-sub-title project-title">Hate Speech Detection On Social Media Using Transfer Learning And Ensemble Techniques</h2>
+            <div class="btn-container">
+              <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/rishabh-pachauri/Hate_speech_detection'">GitHub</button>
+            </div>
+          </div>
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img src="./assets/space.png" alt="Project 2" class="project-img" />
+            </div>
+            <h2 class="experience-sub-title project-title">Space X Falcon 9 First Stage Landing Prediction</h2>
+            <div class="btn-container">
+              <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/rishabh-pachauri/spacex'">GitHub</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='#contact'" />
+    </section>
+    <section id="contact">
+      <p class="section__text__p1">Get in Touch</p>
+      <h1 class="title">Contact Me</h1>
+      <div class="contact-info-upper-container">
+        <div class="contact-info-container">
+          <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon" />
+          <p><a href="mailto:pachauri63@gmail.com">pachauri63@gmail.com</a></p>
+        </div>
+        <div class="contact-info-container">
+          <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
+          <p><a href="https://www.linkedin.com/in/rishabh-pachauri-ribimu">LinkedIn</a></p>
+        </div>
+      </div>
+    </section>
     <footer>
-        &copy; 2024 Rishabh Pachauri. All rights reserved.
+      <nav>
+        <div class="nav-links-container">
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#Skills">Skills</a></li>
+            <li><a href="#Certifications">Certifications</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+      <p>Copyright &#169; 2024 Rishabh Pachauri. All Rights Reserved.</p>
     </footer>
-
-    <script>
-        $(document).ready(function() {
-            $(window).on('scroll', function() {
-                $('.fade-in').each(function() {
-                    if ($(this).offset().top < $(window).scrollTop() + $(window).height()) {
-                        $(this).addClass('show');
-                    }
-                });
-
-                if ($(window).scrollTop() > 50) {
-                    $('nav').css('background', '#000');
-                } else {
-                    $('nav').css('background', 'transparent');
-                }
-            });
-        });
-    </script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
-
 
