@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rishabh Pachauri</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico?">
+  </head>
+  <body>
+    <nav id="desktop-nav">
+      <div class="logo">Rishabh Pachauri</div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="./index.html">HOME</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./skills.html">Skills</a></li>
+          <li><a href="./certifications.html">Certifications</a></li>
+          <li><a href="./projects.html">Projects</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav id="hamburger-nav">
+      <div class="logo">Rishabh Pachauri</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#Skills" onclick="toggleMenu()">Skills</a></li>
+          <li><a href="#Certifications" onclick="toggleMenu()">Certifications</a></li>
+          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </div>
+      </div>
+    </nav>
+        <section id="about">
+      <p class="section__text__p1">Get To Know More</p>
+      <h1 class="title">About Me</h1>
+      <div class="section-container">
+        <div class="section__pic-container">
+          <img src="./assets/about-pic.png" alt="Profile picture" class="about-pic" />
+        </div>
+        <div class="about-details-container">
+          <div class="about-containers">
+            <div class="details-container">
+              <img src="./assets/experience.png" alt="Experience icon" class="icon" />
+              <h3>Experience</h3>
+              <p>1 year<br />Machine Learning Models Development</p>
+            </div>
+            <div class="details-container">
+              <img src="./assets/education.png" alt="Education icon" class="icon" />
+              <h3>Education</h3>
+              <p>B.Tech (Noida Institute Of Engineering And Technology)<br />M.Tech (Central University Of Rajasthan)</p>
+            </div>
+          </div>
+          <div class="text-container">
+            <p>
+              I am actively seeking an organization where I can utilize my problem-solving curiosity and the skills developed during my academic career to provide effective solutions in data science, deep learning, and related fields. I am always excited to learn new skills that can drive innovative solutions for the industry. With strong communication skills and a solid background in machine learning and natural language processing, I am proficient in SQL and programming languages such as Python and C. My goal is to contribute to a dynamic team and continuously expand my expertise to address complex challenges.
+            </p>
+          </div>
+        </div>
+      </div>
+      <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='#Skills'" />
+    </section>
+        </section>
+    <footer>
+      <p>Copyright &#169; 2024 Rishabh Pachauri. All Rights Reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
