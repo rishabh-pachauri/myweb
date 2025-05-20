@@ -280,23 +280,24 @@ section {
 
 .about-containers {
   gap: 2rem;
-  margin: 2rem 0;
-  display: flex;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 
 .about-details-container {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
+  flex-direction: column;
+}
+
+.about-containers,
+.about-details-container {
+  display: flex;
 }
 
 .about-pic {
   border-radius: 2rem;
   -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
   filter: grayscale(100%);
-  width: 300px;
-  height: auto;
-  object-fit: cover;
 }
 
 .arrow {
@@ -310,8 +311,20 @@ section {
   flex: 1;
   background: white;
   border-radius: 2rem;
-  border: 0.1rem solid rgb(163, 163, 163);
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color: rgb(163, 163, 163);
   text-align: center;
+}
+
+.section-container {
+  gap: 4rem;
+  height: 80%;
+}
+
+.section__pic-container {
+  height: 400px;
+  width: 400px;
+  margin: auto 0;
 }
 
 /* EXPERIENCE SECTION */
