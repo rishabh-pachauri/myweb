@@ -111,7 +111,6 @@ a:hover {
   font-size: 1.5rem;
   color: black;
   text-decoration: none;
-  transition: all 0.3 ease-in-out;
 }
 
 .menu-links li {
@@ -123,7 +122,7 @@ a:hover {
 }
 
 .hamburger-icon.open span:first-child {
-  transform: rotate(45deg) translate(10px, 5px);
+  transform: rotate(45deg) translate(5px, 5px);
 }
 
 .hamburger-icon.open span:nth-child(2) {
@@ -131,19 +130,7 @@ a:hover {
 }
 
 .hamburger-icon.open span:last-child {
-  transform: rotate(-45deg) translate(10px, -5px);
-}
-
-.hamburger-icon span:first-child {
-  transform: none;
-}
-
-.hamburger-icon span:first-child {
-  opacity: 1;
-}
-
-.hamburger-icon span:first-child {
-  transform: none;
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 
 /* SECTIONS */
