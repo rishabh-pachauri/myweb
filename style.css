@@ -463,22 +463,22 @@ footer p {
   text-align: center;
 }
 body {
-  background-image: url('./assets/watermark.jpg');
-  background-repeat: repeat;
-  background-size: 200px 200px; /* adjust size as needed */
-  background-position: center;
-  background-attachment: fixed;
+  position: relative;
+  z-index: 0;
 }
+
+/* Watermark overlay */
 body::before {
   content: "";
   position: fixed;
   top: 0;
   left: 0;
-  height: 100%;
-  width: 100%;
-  background-image: url('./assets/watermark.png');
+  width: 100vw;
+  height: 100vh;
+  background-image: url('./assets/watermark.jpg');
   background-repeat: repeat;
-  background-size: 200px 200px;
-  opacity: 0.05; /* makes the watermark subtle */
+  background-size: 250px; /* or adjust as needed */
+  opacity: 0.03; /* ultra light */
   z-index: -1;
+  pointer-events: none; /* allows clicking through */
 }
