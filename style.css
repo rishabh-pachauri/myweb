@@ -476,9 +476,9 @@ body::before {
   width: 100vw;
   height: 100vh;
   background-image: url('./assets/watermark.jpg');
-  background-repeat: repeat;
+  background-repeat: no-repeat;
   background-size: 250px; /* or adjust as needed */
-  opacity: 0.03; /* ultra light */
+  opacity: 0.3; /* ultra light */
   z-index: -1;
   pointer-events: none; /* allows clicking through */
 }
