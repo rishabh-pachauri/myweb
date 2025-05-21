@@ -462,3 +462,23 @@ footer {
 footer p {
   text-align: center;
 }
+body {
+  background-image: url('./assets/watermark.jpg');
+  background-repeat: repeat;
+  background-size: 200px 200px; /* adjust size as needed */
+  background-position: center;
+  background-attachment: fixed;
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url('./assets/watermark.png');
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  opacity: 0.05; /* makes the watermark subtle */
+  z-index: -1;
+}
