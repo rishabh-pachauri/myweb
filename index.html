@@ -1,63 +1,494 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rishabh Pachauri</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico?">
-  </head>
-  <body>
-<nav id="desktop-nav">
-      <div class="logo">Rishabh Pachauri</div>
-      <div>
-        <ul class="nav-links">
-          <li><a href="./about.html">About</a></li>
-          <li><a href="./skills.html">Skills</a></li>
-          <li><a href="./certifications.html">Certifications</a></li>
-          <li><a href="./projects.html">Projects</a></li>
-          <li><a href="./contact.html">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
-    <nav id="hamburger-nav">
-      <div class="logo">Rishabh Pachauri</div>
-      <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="menu-links">
-          <li><a href="./about.html" onclick="toggleMenu()">About</a></li>
-          <li><a href="./skills.html" onclick="toggleMenu()">Skills</a></li>
-          <li><a href="./certifications.html" onclick="toggleMenu()">Certifications</a></li>
-          <li><a href="./projects.html" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="./contact.html" onclick="toggleMenu()">Contact</a></li>
-        </div>
-      </div>
-    </nav>
-<section id="profile">
-  <div class="section__text centered">
-    <h1 class="title">Rishabh Pachauri</h1>
-    <p class="section__text__p2">Masters Student</p>
-    <div class="btn-container">
-      <button class="btn btn-color-2" onclick="window.open('./assets/rishav.pdf')">Download CV</button>
-      <button class="btn btn-color-1" onclick="location.href='#contact'">Contact Info</button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rishabh Pachauri — AI/ML Educator & Engineer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ── CURSOR ── -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-follower" id="cursor-follower"></div>
+
+<!-- ── NAV ── -->
+<nav id="nav">
+  <div class="nav-logo">RP<span class="dot">.</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact" class="nav-cta">Let's Talk</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobile-menu">
+  <ul>
+    <li><a href="#about" onclick="closeMobile()">About</a></li>
+    <li><a href="#experience" onclick="closeMobile()">Experience</a></li>
+    <li><a href="#projects" onclick="closeMobile()">Projects</a></li>
+    <li><a href="#skills" onclick="closeMobile()">Skills</a></li>
+    <li><a href="#education" onclick="closeMobile()">Education</a></li>
+    <li><a href="#contact" onclick="closeMobile()">Contact</a></li>
+  </ul>
+</div>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-bg">
+    <canvas id="neural-canvas"></canvas>
+    <div class="hero-grid"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      Available for AI/ML Consulting
     </div>
-    <div id="socials-container">
-      <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon" onclick="location.href='https://www.linkedin.com/in/rishabh-pachauri-ribimu'" />
-      <img src="./assets/github.png" alt="My Github profile" class="icon" onclick="location.href='https://github.com/rishabh-pachauri/'" />
+    <h1 class="hero-name">
+      <span class="name-line" data-text="Rishabh">Rishabh</span>
+      <span class="name-line accent" data-text="Pachauri">Pachauri</span>
+    </h1>
+    <p class="hero-role">AI/ML Instructor <span class="sep">×</span> Deep Learning Engineer <span class="sep">×</span> GenAI Builder</p>
+    <p class="hero-tagline">I teach machines to learn — and humans to teach machines.</p>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num">3+</span>
+        <span class="stat-label">Years Training</span>
+      </div>
+      <div class="stat-div"></div>
+      <div class="stat">
+        <span class="stat-num">60%</span>
+        <span class="stat-label">Eval Time Saved</span>
+      </div>
+      <div class="stat-div"></div>
+      <div class="stat">
+        <span class="stat-num">10+</span>
+        <span class="stat-label">Capstones Mentored</span>
+      </div>
+    </div>
+    <div class="hero-actions">
+      <a href="./assets/Rishabh_resume_I.pdf" class="btn-primary" download>Download Resume</a>
+      <a href="#contact" class="btn-outline">Get in Touch</a>
+    </div>
+    <div class="hero-socials">
+      <a href="https://www.linkedin.com/in/rishabh-pachauri-ribimu" target="_blank" class="social-link">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://github.com/rishabh-pachauri" target="_blank" class="social-link">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        GitHub
+      </a>
+      <a href="https://rishabhpachauri.com" target="_blank" class="social-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        Website
+      </a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section id="about">
+  <div class="container">
+    <div class="section-label">01 / About</div>
+    <div class="about-grid">
+      <div class="about-text">
+        <h2 class="section-title">Making AI <em>teachable</em>,<br>making learners <em>unstoppable</em>.</h2>
+        <p>I'm a UGC NET-qualified AI/ML educator and engineer with 3+ years of experience building and delivering cutting-edge learning programs in Machine Learning, Deep Learning, NLP, and Generative AI.</p>
+        <p>Currently at <strong>Newton School of Technology, Rishihood University</strong>, I design end-to-end project-based curricula and build AI-powered evaluation systems using the Claude API — cutting grading turnaround by 60%+.</p>
+        <p>My approach is simple: <em>real engineering workflows in the classroom</em>. Students don't just learn theory — they build, train, and deploy AI systems from scratch.</p>
+        <div class="about-tags">
+          <span>NLP</span><span>Computer Vision</span><span>Generative AI</span><span>LLMs</span>
+          <span>Deep Learning</span><span>Curriculum Design</span><span>Project-Based Learning</span>
+        </div>
+      </div>
+      <div class="about-visual">
+        <div class="av-card">
+          <div class="av-icon">🎓</div>
+          <div class="av-title">M.Tech CS/AI&ML</div>
+          <div class="av-sub">Central University of Rajasthan</div>
+        </div>
+        <div class="av-card">
+          <div class="av-icon">📜</div>
+          <div class="av-title">UGC NET Qualified</div>
+          <div class="av-sub">Computer Science & Applications · 2024</div>
+        </div>
+        <div class="av-card">
+          <div class="av-icon">🤖</div>
+          <div class="av-title">AI Evaluation System</div>
+          <div class="av-sub">Live in production · Newton School of Tech</div>
+        </div>
+        <div class="av-card highlight">
+          <div class="av-icon">⚡</div>
+          <div class="av-title">60%+ Faster Grading</div>
+          <div class="av-sub">LLM-powered automated assessment</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
-    <footer>
-      <p>Copyright &#169; 2024 Rishabh Pachauri. All Rights Reserved.</p>
-    </footer>
-    <script src="script.js"></script>
-  </body>
-</html>
 
+<!-- ── EXPERIENCE ── -->
+<section id="experience">
+  <div class="container">
+    <div class="section-label">02 / Experience</div>
+    <h2 class="section-title">Where I've <em>taught</em> &amp; <em>built</em>.</h2>
+    <div class="timeline">
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">Apr 2025 — Present</div>
+        <div class="tl-card">
+          <div class="tl-badge current">Current</div>
+          <h3 class="tl-role">Instructor — Advanced ML, Deep Learning & Generative AI</h3>
+          <div class="tl-company">Newton School of Technology · Rishihood University · Sonipat, Haryana</div>
+          <ul class="tl-bullets">
+            <li>Deliver intensive hands-on training in Advanced ML, Deep Learning, NLP, Computer Vision &amp; GenAI for full-time cohorts.</li>
+            <li>Built an <strong>AI-powered automated evaluation system</strong> using Claude API — semantic scoring, rubric alignment, partial credit, misconception tagging, and adaptive hints. Cut evaluation time by <strong>60%+</strong>.</li>
+            <li>Designed end-to-end project-based modules where students build, train, and deploy AI systems simulating real engineering workflows.</li>
+            <li>Conducted Linear Algebra &amp; Calculus workshops tailored for AI/ML readiness, connecting math directly to model optimization.</li>
+          </ul>
+          <div class="tl-tags"><span>Generative AI</span><span>Claude API</span><span>LLMs</span><span>Curriculum Design</span></div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">Jul 2024 — Apr 2025</div>
+        <div class="tl-card">
+          <h3 class="tl-role">Instructor — Machine Learning & Data Science</h3>
+          <div class="tl-company">Pranveer Singh Institute of Technology · Kanpur, UP</div>
+          <ul class="tl-bullets">
+            <li>Instructed undergraduate students in ML, Deep Learning, NLP, Computer Vision, and Data Science with consistently high learner feedback.</li>
+            <li>Designed Python-based lab sessions covering data preprocessing, model training, evaluation, and visualization using scikit-learn, TensorFlow, and Keras.</li>
+            <li>Built assessment frameworks — coding assignments, quizzes, and project presentations — to measure applied AI competency.</li>
+            <li>Mentored <strong>10+ capstone projects</strong> from ideation through model deployment.</li>
+          </ul>
+          <div class="tl-tags"><span>TensorFlow</span><span>scikit-learn</span><span>Keras</span><span>Python</span></div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">2020 — 2022</div>
+        <div class="tl-card">
+          <h3 class="tl-role">AI Subject Matter Expert & Content Reviewer</h3>
+          <div class="tl-company">Photomath · Freelance / Remote</div>
+          <ul class="tl-bullets">
+            <li>Created structured, pedagogically sound mathematical content for AI training pipelines covering algebra through calculus.</li>
+            <li>Reviewed and quality-assured annotated datasets for AI model training — ensuring correctness, clarity, and suitability.</li>
+            <li>Promoted to <strong>Reviewer</strong> role, validating contributor content and maintaining global content standards prior to model integration.</li>
+          </ul>
+          <div class="tl-tags"><span>AI Training Data</span><span>Content Review</span><span>Math</span></div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">Jan 2019 — Jun 2019</div>
+        <div class="tl-card">
+          <h3 class="tl-role">Web Development Intern</h3>
+          <div class="tl-company">BMK Infotech · Onsite</div>
+          <ul class="tl-bullets">
+            <li>Developed responsive web interfaces using HTML, CSS, and JavaScript.</li>
+            <li>Supported backend integrations under senior developer supervision.</li>
+          </ul>
+          <div class="tl-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── PROJECTS ── -->
+<section id="projects">
+  <div class="container">
+    <div class="section-label">03 / Projects</div>
+    <h2 class="section-title">Things I've <em>built</em>.</h2>
+    <div class="projects-grid">
+
+      <div class="proj-card featured">
+        <div class="proj-visual" style="background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);">
+          <div class="proj-icon-large">🧠</div>
+          <div class="proj-glow"></div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-meta">
+            <span class="proj-tag live">🟢 Live in Production</span>
+            <span class="proj-year">2025</span>
+          </div>
+          <h3>AI-Powered Student Evaluation System</h3>
+          <p>Automated evaluation platform using LLMs to assess open-ended AI/ML assignments. Features semantic scoring, rubric alignment, partial credit, misconception tagging, and adaptive feedback hints. Actively deployed at Newton School of Technology for multiple cohorts — with an instructor dashboard for cohort-level skill gap analysis.</p>
+          <div class="proj-impact">⚡ 60%+ reduction in evaluation turnaround time</div>
+          <div class="proj-stack">
+            <span>Python</span><span>Claude API</span><span>Hugging Face</span><span>Streamlit</span><span>React</span><span>Pandas</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-visual" style="background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);">
+          <div class="proj-icon-large">🎙️</div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-meta">
+            <span class="proj-tag demo">Teaching Demo</span>
+            <span class="proj-year">2025</span>
+          </div>
+          <h3>Speech Diarization — GMM + EM From Scratch</h3>
+          <p>Complete speaker diarization pipeline from first principles using custom Gaussian Mixture Models and Expectation-Maximization. MFCC-based audio feature extraction with EM convergence visualization and speaker-labeled timeline outputs — zero external diarization libraries used.</p>
+          <div class="proj-stack">
+            <span>Python</span><span>GMM</span><span>EM Algorithm</span><span>MFCC</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-visual" style="background: linear-gradient(135deg, #200122, #6f0000, #3d0000);">
+          <div class="proj-icon-large">🔍</div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-meta">
+            <span class="proj-tag demo">NLP Workshop</span>
+            <span class="proj-year">Jun 2024</span>
+          </div>
+          <h3>Hate Speech Detection — BERT Ensemble NLP</h3>
+          <p>Fine-tuned BERT, RoBERTa, and DistilBERT; applied ensemble stacking to outperform individual baselines. Used as a live NLP fine-tuning workshop demonstration showcasing real-world model comparison and deployment strategies.</p>
+          <div class="proj-stack">
+            <span>BERT</span><span>RoBERTa</span><span>DistilBERT</span><span>Ensemble</span><span>HuggingFace</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card">
+        <div class="proj-visual" style="background: linear-gradient(135deg, #0a3d0a, #145214, #1e7b1e);">
+          <div class="proj-icon-large">🛰️</div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-meta">
+            <span class="proj-tag collab">Omdena</span>
+            <span class="proj-year">2023–2024</span>
+          </div>
+          <h3>Urban Farming Optimization & Climate Forecasting</h3>
+          <p>End-to-end AI projects covering satellite imagery segmentation with CNNs, LSTM time-series forecasting for climate data, and XGBoost classification for SpaceX prediction — deployed as complete course walkthrough projects for learners.</p>
+          <div class="proj-stack">
+            <span>CNN</span><span>LSTM</span><span>XGBoost</span><span>Satellite Imagery</span><span>Time Series</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── SKILLS ── -->
+<section id="skills">
+  <div class="container">
+    <div class="section-label">04 / Skills</div>
+    <h2 class="section-title">My <em>technical</em> toolkit.</h2>
+    <div class="skills-grid">
+
+      <div class="skill-group">
+        <div class="sg-header">
+          <span class="sg-icon">🤖</span>
+          <h4>AI Specializations</h4>
+        </div>
+        <div class="sg-tags">
+          <span>NLP</span><span>Computer Vision</span><span>Generative AI</span><span>LLMs</span>
+          <span>Time Series</span><span>Ensemble Methods</span><span>Deep Learning</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="sg-header">
+          <span class="sg-icon">⚙️</span>
+          <h4>ML/DL Frameworks</h4>
+        </div>
+        <div class="sg-tags">
+          <span>TensorFlow</span><span>Keras</span><span>scikit-learn</span>
+          <span>Hugging Face</span><span>PyTorch</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="sg-header">
+          <span class="sg-icon">💻</span>
+          <h4>Languages</h4>
+        </div>
+        <div class="sg-tags">
+          <span>Python</span><span>SQL</span><span>HTML/CSS</span><span>C</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="sg-header">
+          <span class="sg-icon">🎓</span>
+          <h4>Teaching Tech</h4>
+        </div>
+        <div class="sg-tags">
+          <span>Jupyter Notebook</span><span>Google Colab</span><span>Streamlit</span>
+          <span>LMS Platforms</span><span>Git</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="sg-header">
+          <span class="sg-icon">🛠️</span>
+          <h4>Productivity & Tools</h4>
+        </div>
+        <div class="sg-tags">
+          <span>VS Code</span><span>MySQL</span><span>LaTeX</span><span>Google Workspace</span>
+          <span>React</span><span>Pandas</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="sg-header">
+          <span class="sg-icon">📚</span>
+          <h4>Instructional</h4>
+        </div>
+        <div class="sg-tags">
+          <span>Curriculum Dev</span><span>Project-Based Learning</span><span>Bootcamp Facilitation</span>
+          <span>Mentoring</span><span>Assessment Design</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── EDUCATION ── -->
+<section id="education">
+  <div class="container">
+    <div class="section-label">05 / Education & Credentials</div>
+    <h2 class="section-title">Academic <em>foundations</em>.</h2>
+    <div class="edu-grid">
+
+      <div class="edu-card primary">
+        <div class="edu-icon">🎓</div>
+        <div class="edu-body">
+          <div class="edu-degree">M.Tech. in Computer Science & Engineering</div>
+          <div class="edu-spec">Specialization: Artificial Intelligence & Machine Learning</div>
+          <div class="edu-inst">Central University of Rajasthan, Ajmer</div>
+          <div class="edu-year">2024</div>
+        </div>
+      </div>
+
+      <div class="edu-card">
+        <div class="edu-icon">🏛️</div>
+        <div class="edu-body">
+          <div class="edu-degree">B.Tech. in Information Technology</div>
+          <div class="edu-inst">Noida Institute of Engineering & Technology</div>
+          <div class="edu-year">2020</div>
+        </div>
+      </div>
+
+      <div class="edu-card cert">
+        <div class="edu-icon">📜</div>
+        <div class="edu-body">
+          <div class="edu-degree">UGC NET Qualified</div>
+          <div class="edu-spec">Computer Science & Applications</div>
+          <div class="edu-inst">National Eligibility Test · India</div>
+          <div class="edu-year">2024</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="certs-title">Certifications</div>
+    <div class="certs-list">
+      <div class="cert-item">
+        <span class="cert-badge">IBM</span>
+        <span>Applied Data Science Specialization — Coursera</span>
+      </div>
+      <div class="cert-item">
+        <span class="cert-badge">IBM</span>
+        <span>Machine Learning with Python <em>(Honors)</em> — Coursera</span>
+      </div>
+      <div class="cert-item">
+        <span class="cert-badge">IBM</span>
+        <span>Databases and SQL for Data Science with Python <em>(Honors)</em> — Coursera</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="container">
+    <div class="section-label">06 / Contact</div>
+    <div class="contact-inner">
+      <div class="contact-left">
+        <h2 class="section-title">Let's <em>build</em><br>something together.</h2>
+        <p>Open to AI/ML consulting, curriculum design collaborations, speaking engagements, and exciting research opportunities. Drop me a message.</p>
+        <div class="contact-links">
+          <a href="mailto:pachauri63@gmail.com" class="c-link">
+            <span class="c-link-icon">✉️</span>
+            pachauri63@gmail.com
+          </a>
+          <a href="tel:+918535032852" class="c-link">
+            <span class="c-link-icon">📱</span>
+            +91 85350 32852
+          </a>
+          <a href="https://www.linkedin.com/in/rishabh-pachauri-ribimu" target="_blank" class="c-link">
+            <span class="c-link-icon">💼</span>
+            LinkedIn Profile
+          </a>
+          <a href="https://rishabhpachauri.com" target="_blank" class="c-link">
+            <span class="c-link-icon">🌐</span>
+            rishabhpachauri.com
+          </a>
+        </div>
+      </div>
+      <div class="contact-right">
+        <form class="contact-form" id="contact-form">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" placeholder="John Doe" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="john@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+          </div>
+          <button type="submit" class="btn-primary full">Send Message →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer id="footer">
+  <div class="footer-inner">
+    <div class="footer-logo">RP<span class="dot">.</span></div>
+    <p>Designed & built by Rishabh Pachauri · 2025</p>
+    <div class="footer-links">
+      <a href="https://github.com/rishabh-pachauri" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/rishabh-pachauri-ribimu" target="_blank">LinkedIn</a>
+      <a href="https://rishabhpachauri.com" target="_blank">Website</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
